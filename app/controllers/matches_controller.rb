@@ -5,7 +5,6 @@ class MatchesController < ProtectedController
   # GET /matches.json
   def index
     # @matches = Match.all
-    # current_user.matches
     # render json: @matches
     render json: current_user.matches
 
