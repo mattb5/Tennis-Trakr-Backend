@@ -1,45 +1,50 @@
-curl --include --request POST http://localhost:3000/matches
---header "Content-Type: application/json"
---data
-  '{"person":
-    {"surname": "Horn",
-     "given_name": "Jeff",
-      "phone_number": "9785555555"
-      }}'
-
 ***************************************
 
 this is the working one
 
+//POST curl request with user_id inserted
 
-2
+curl --include --request POST http://localhost:3000/matches \
+--header "Content-Type: application/json" \
+--header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+--data '{
+   "match": {
+     "user_id": 3,
+     "opponent": "Roger Federer"
+   }
+}'
 
-***************************************
+//POST curl request without user_id inserted
 
-   curl --include --request POST http://localhost:3000/matches
-   --header "Content-Type: application/json"
-   -- data '{
-        "matches": {
-            "opponent": "Matt",
-            "user_id": 1
-        }
-   }'
+curl --include --request POST http://localhost:3000/matches \
+--header "Content-Type: application/json" \
+--header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+--data '{
+   "match": {
+     "opponent": "Roger Federer"
+   }
+}'
 
+//GET curl request
 
- curl "http://localhost:3000/matches" \
-   --include \
-   --request GET \
-   --header "Authorization: Token token"="BAhJIiViNmNhNTVhYTRlZjQ0MDdjOTU4ZTE4YTVmNGY1NjdhZQY6BkVG--dbec8a2f5a64b6ae892e8eda2f51b24106fa817a" \
+curl "http://localhost:3000/matches" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
 
+//GET curl request
 
- curl "http://localhost:3000/matches/1" \
-   --include \
-   --request GET \
-   --header "Authorization: Token token"="BAhJIiViNmNhNTVhYTRlZjQ0MDdjOTU4ZTE4YTVmNGY1NjdhZQY6BkVG--dbec8a2f5a64b6ae892e8eda2f51b24106fa817a" \
+curl "http://localhost:3000/matches/12" \
+  --include \
+  --request DELETE \
+  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
 
-
-
-
-   curl "http://localhost:3000/matches/1" \
-     --include \
-     --request GET \
+  curl --include --request PATCH http://localhost:3000/matches/16 \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+  --data '{
+     "match": {
+       "opponent": "Andre Agassi"
+     }
+  }'
+****************************************

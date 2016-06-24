@@ -20,7 +20,8 @@ class MatchesController < ProtectedController
   # POST /matches
   # POST /matches.json
   def create
-    @match = Match.new(match_params)
+    # @match = Match.new(match_params)
+    @match = current_user.matches.build(match_params)
 
     if @match.save
       render json: @match, status: :created, location: @match
@@ -32,7 +33,7 @@ class MatchesController < ProtectedController
   # PATCH/PUT /matches/1
   # PATCH/PUT /matches/1.json
   def update
-    @match = Match.find(params[:id])
+    # @match = Match.find(params[:id])
 
     if @match.update(match_params)
       head :no_content
