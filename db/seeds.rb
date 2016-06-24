@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Example.create([
+  { text: "Matt", user_id: 3  }
+])
+
+
+Match.create([
+  { opponent: "Matt", user_id: 3  },
+  { opponent: "John", user_id: 1  },
+  { opponent: "Ruben", user_id: 2  },
+  { opponent: "Josh", user_id: 4  }
+])

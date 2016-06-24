@@ -1,0 +1,45 @@
+curl --include --request POST http://localhost:3000/matches
+--header "Content-Type: application/json"
+--data
+  '{"person":
+    {"surname": "Horn",
+     "given_name": "Jeff",
+      "phone_number": "9785555555"
+      }}'
+
+***************************************
+
+this is the working one
+
+
+2
+
+***************************************
+
+   curl --include --request POST http://localhost:3000/matches
+   --header "Content-Type: application/json"
+   -- data '{
+        "matches": {
+            "opponent": "Matt",
+            "user_id": 1
+        }
+   }'
+
+
+ curl "http://localhost:3000/matches" \
+   --include \
+   --request GET \
+   --header "Authorization: Token token"="BAhJIiViNmNhNTVhYTRlZjQ0MDdjOTU4ZTE4YTVmNGY1NjdhZQY6BkVG--dbec8a2f5a64b6ae892e8eda2f51b24106fa817a" \
+
+
+ curl "http://localhost:3000/matches/1" \
+   --include \
+   --request GET \
+   --header "Authorization: Token token"="BAhJIiViNmNhNTVhYTRlZjQ0MDdjOTU4ZTE4YTVmNGY1NjdhZQY6BkVG--dbec8a2f5a64b6ae892e8eda2f51b24106fa817a" \
+
+
+
+
+   curl "http://localhost:3000/matches/1" \
+     --include \
+     --request GET \
