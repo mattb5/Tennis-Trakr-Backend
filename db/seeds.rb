@@ -16,5 +16,7 @@ Match.create([
   { opponent: "Matt", user_id: 3  },
   { opponent: "John", user_id: 1  },
   { opponent: "Ruben", user_id: 2  },
-  { opponent: "Josh", user_id: 4  }
+  { opponent: "Josh", user_id: 4  },
+  { opponent: "Roger", user_id: 4, date: "monday"  },
+  { opponent: "Roger", user_id: 6, date: "tuesday"  }
 ])

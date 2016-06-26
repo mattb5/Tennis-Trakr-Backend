@@ -1,0 +1,52 @@
+***************************************
+
+this is the working one
+
+//POST curl request with user_id inserted
+
+curl --include --request POST http://localhost:3000/matches \
+--header "Content-Type: application/json" \
+--header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+--data '{
+   "match": {
+     "user_id": 3,
+     "opponent": "Roger Federer"
+   }
+}'
+
+//POST curl request without user_id inserted
+
+curl --include --request POST http://localhost:3000/matches \
+--header "Content-Type: application/json" \
+--header "Authorization: Token token"="BAhJIiVmN2MwNDFmOWRkNjE3YzY5MzAyNzE1MDM2OTUyMzAyMwY6BkVG--3a98823c2ad2e88d5c3063c8f7340a0fb95b8e3c" \
+--data '{
+   "match": {
+     "date": "Wednesday",
+     "result": "win 7-5, 6-4",
+     "opponent": "Roger Federer"
+   }
+}'
+
+//GET curl request
+
+curl "http://localhost:3000/matches" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+
+//GET curl request
+
+curl "http://localhost:3000/matches/12" \
+  --include \
+  --request DELETE \
+  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+
+  curl --include --request PATCH http://localhost:3000/matches/16 \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+  --data '{
+     "match": {
+       "opponent": "Andre Agassi"
+     }
+  }'
+****************************************

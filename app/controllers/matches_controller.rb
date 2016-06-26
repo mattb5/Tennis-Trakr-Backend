@@ -56,6 +56,6 @@ class MatchesController < ProtectedController
     end
 
     def match_params
-      params.require(:match).permit(:opponent, :user_id)
+      params.require(:match).permit(:opponent, :date, :result, :user_id)
     end
 end
