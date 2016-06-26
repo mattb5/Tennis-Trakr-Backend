@@ -1,15 +1,27 @@
-class MatchesController < ProtectedController
+# class MatchesController < ProtectedController
+class MatchesController < ApplicationController
+
   before_action :set_match, only: [:show, :update, :destroy]
+  before_action :authenticate
 
   # GET /matches
   # GET /matches.json
   def index
-    # @matches = Match.all
-    # render json: @matches
-    render json: current_user.matches
+
+     render json: @matches.current_user
 
   end
 
+  def indexGetMatches
+    # laura = 6
+    all_matches = Match.all
+    # laura = matt.select { |i| i.user_id == 6 }
+    signed_in_user_matches = all_matches.select { |i| i.user_id == params[:id].to_i }
+    #  render json: @my_matches
+
+    render json: signed_in_user_matches
+
+  end
   # GET /matches/1
   # GET /matches/1.json
   def show

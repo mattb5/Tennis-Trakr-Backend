@@ -32,7 +32,7 @@ curl --include --request POST http://localhost:3000/matches \
 curl "http://localhost:3000/matches" \
   --include \
   --request GET \
-  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+  --header "Authorization: Token token"="BAhJIiVkYzMxZWRiZmU1MDA5M2ZlMDcxYzc0NTE1NTFiZTljMgY6BkVG--c108faf6e9815e0eadeef4c29486ada6c27b0fed" \
 
 //GET curl request
 
@@ -49,4 +49,13 @@ curl "http://localhost:3000/matches/12" \
        "opponent": "Andre Agassi"
      }
   }'
+
+//GET curl request using my new method
+
+curl "http://localhost:3000/get-user-matches/6" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token"="BAhJIiVkYzMxZWRiZmU1MDA5M2ZlMDcxYzc0NTE1NTFiZTljMgY6BkVG--c108faf6e9815e0eadeef4c29486ada6c27b0fed" \
+
+
 ****************************************
