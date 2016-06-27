@@ -56,8 +56,10 @@ class MatchesController < ApplicationController
   # DELETE /matches/1
   # DELETE /matches/1.json
   def destroy
-    @match.destroy
 
+    if (current_user.matches.any? { |i| i.id == params[:id].to_i })
+      @match.destroy
+    end
     head :no_content
   end
 
