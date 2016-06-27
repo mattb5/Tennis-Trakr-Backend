@@ -20,3 +20,10 @@ Match.create([
   { opponent: "Roger", user_id: 4, date: "monday"  },
   { opponent: "Roger", user_id: 6, date: "tuesday"  }
 ])
+
+
+Venue.create([
+  { venue_location: "Center Court, Barrington, RI" },
+  { venue_location: "Brown University Tennis Courts, East Side of Providence, RI" },
+  { venue_location: "Hope High School Tennis Courts, Providence, RI" }
+])

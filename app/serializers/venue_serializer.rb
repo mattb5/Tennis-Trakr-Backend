@@ -1,3 +1,3 @@
 class VenueSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :venue_location
 end

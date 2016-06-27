@@ -68,6 +68,6 @@ class MatchesController < ApplicationController
     end
 
     def match_params
-      params.require(:match).permit(:opponent, :date, :result, :user_id)
+      params.require(:match).permit(:opponent, :date, :result, :user_id, :venue_id)
     end
 end
