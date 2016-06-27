@@ -18,12 +18,13 @@ curl --include --request POST http://localhost:3000/matches \
 
 curl --include --request POST http://localhost:3000/matches \
 --header "Content-Type: application/json" \
---header "Authorization: Token token"="BAhJIiVmN2MwNDFmOWRkNjE3YzY5MzAyNzE1MDM2OTUyMzAyMwY6BkVG--3a98823c2ad2e88d5c3063c8f7340a0fb95b8e3c" \
+--header "Authorization: Token token"="BAhJIiU3NGZlZGI1Mzg4NWRhZmNjNDEwMmUxOTY0ZTM1YTcxMwY6BkVG--0f19d77d354c60c718af140981a122bdbac1b0b2" \
 --data '{
    "match": {
      "date": "Wednesday",
      "result": "win 7-5, 6-4",
-     "opponent": "Roger Federer"
+     "opponent": "Roger Federer",
+     "venue_id": 1
    }
 }'
 
@@ -36,10 +37,10 @@ curl "http://localhost:3000/matches" \
 
 //GET curl request
 
-curl "http://localhost:3000/matches/12" \
+curl "http://localhost:3000/matches/32" \
   --include \
   --request DELETE \
-  --header "Authorization: Token token"="BAhJIiUzNWNiZWI1MTRmNzk3MWRkMjIzYWMyMjI3MjNlMTRlOAY6BkVG--d0cd4367fe82a1fc4643946063241d7bddb32c71" \
+  --header "Authorization: Token token"="BAhJIiVkMmU5Mjc2Njc4Mzk1YzgwNmRhMjkwYjQ4ZmZlYTQyMQY6BkVG--86d7656c54cfdfcc11ea71474ddda764cbedbd81" \
 
   curl --include --request PATCH http://localhost:3000/matches/16 \
   --header "Content-Type: application/json" \
