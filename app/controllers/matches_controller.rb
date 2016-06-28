@@ -7,18 +7,14 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-
-     render json: @matches.current_user
-
+    render json: @matches.current_user
   end
 
   def indexGetMatches
-    # laura = 6
     all_matches = Match.all
     # laura = matt.select { |i| i.user_id == 6 }
     signed_in_user_matches = all_matches.select { |i| i.user_id == params[:id].to_i }
     #  render json: @my_matches
-
     render json: signed_in_user_matches
 
   end
@@ -56,10 +52,9 @@ class MatchesController < ApplicationController
   # DELETE /matches/1
   # DELETE /matches/1.json
   def destroy
-
-    if (current_user.matches.any? { |i| i.id == params[:id].to_i })
-      @match.destroy
-    end
+    # if (current_user.matches.any? { |i| i.id == params[:id].to_i })
+    @match.destroy
+    # end
     head :no_content
   end
 
