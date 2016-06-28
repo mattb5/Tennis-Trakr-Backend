@@ -13,7 +13,7 @@ Example.create([
 
 
 Match.create([
-  { opponent: "Matt", user_id: 3  },
+  { opponent: "Matt", user_id: 3   },
   { opponent: "John", user_id: 1  },
   { opponent: "Ruben", user_id: 2  },
   { opponent: "Josh", user_id: 4  },
